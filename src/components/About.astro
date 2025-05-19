@@ -1,0 +1,171 @@
+<section id="about" class="py-20 bg-slate-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Text Content -->
+      <div class="space-y-6">
+        <h2 class="text-4xl font-bold text-white">About Me</h2>
+        <p class="text-lg text-gray-300">
+          I'm a passionate and solution-driven frontend developer who thrives on
+          turning complex problems into elegant solutions. I've worked on
+          various projects in a software house and contributed to AI-powered
+          outbound sales platform in a product company, gaining experience in
+          both modern and legacy codebases.
+        </p>
+        <p class="text-lg text-gray-300">
+          I'm constantly expanding my knowledge and embracing new technologies
+          while maintaining the flexibility to work with existing systems. I
+          particularly enjoy the intersection of design and development,
+          bringing creative solutions to life while ensuring robust technical
+          implementation.
+        </p>
+
+        <!-- Skills -->
+        <div class="pt-6">
+          <h3 class="text-2xl font-semibold text-white mb-4">Skills</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >React</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >TypeScript</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Node.js</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >MongoDB</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >React Native</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Next.js</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Git</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Jira</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Storybook</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Cypress</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Playwright</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Jest</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >CSS3</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >HTML5</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Redux</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >MobX</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >React Query</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Tamagui</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Material-UI</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Ant Design</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >Emotion CSS</span
+            >
+            <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full"
+              >SASS</span
+            >
+            <span class="text-blue-300 self-end">...and more</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image or Additional Content -->
+      <div class="relative">
+        <div
+          class="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-1"
+        >
+          <div
+            class="w-full h-full rounded-2xl bg-slate-800/50 backdrop-blur-sm flex items-center justify-center"
+          >
+            <p class="text-gray-400 text-center p-8">
+              [Your Image or Additional Content Here]
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .skill-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const skillsContainer = document.querySelector(".flex.flex-wrap");
+  if (skillsContainer) {
+    const skills = Array.from(skillsContainer.children);
+
+    // Add animation classes to all skills
+    skills.forEach((skill) => {
+      skill.classList.add("skill-item");
+    });
+
+    // Function to animate skills
+    const animateSkills = () => {
+      skills.forEach((skill, index) => {
+        setTimeout(() => {
+          skill.classList.add("visible");
+        }, index * 50);
+      });
+    };
+
+    // Create Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Reset all skills to initial state
+            skills.forEach((skill) => {
+              skill.classList.remove("visible");
+            });
+            // Start animation
+            animateSkills();
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the element is visible
+      }
+    );
+
+    // Start observing the skills container
+    observer.observe(skillsContainer);
+  }
+</script>
