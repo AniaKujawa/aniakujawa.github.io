@@ -1,8 +1,8 @@
 ---
 const navItems = [
   { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Interests", href: "#interests" },
+  { name: "Experience", href: "#experience" },
+  { name: "Hobbies", href: "#hobbies" },
   { name: "Contact", href: "#contact" },
 ];
 ---
@@ -18,7 +18,7 @@ const navItems = [
             navItems.map((item) => (
               <a
                 href={item.href}
-                class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+                class="px-3 py-2 rounded-md text-sm text-gray-600 dark:text-white font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
               >
                 {item.name}
               </a>
@@ -28,13 +28,13 @@ const navItems = [
       </div>
       <button
         id="theme-toggle"
-        class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+        class="p-2 rounded-lg text-gray-600 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
       >
         <svg
           class="w-5 h-5"
           fill="none"
-          stroke="currentColor"
           viewBox="0 0 24 24"
+          stroke="currentColor"
         >
           <path
             stroke-linecap="round"
@@ -53,10 +53,10 @@ const navItems = [
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      return "light";
     }
-    return "light";
+    return "dark";
   })();
 
   if (theme === "light") {

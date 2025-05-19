@@ -1,0 +1,177 @@
+<section id="hobbies" class="py-20 dark:bg-slate-900 relative overflow-hidden">
+  <div class="container mx-auto px-4">
+    <h2
+      class="text-3xl font-bold dark:text-white text-gray-600 mb-8 text-center"
+    >
+      Hobbies
+    </h2>
+
+    <div class="flex flex-wrap justify-center">
+      <!-- Hobby Item 1 -->
+      <div
+        class="hobby-ball bg-gradient-to-r from-[#8da8cc] to-[#4AAAF9] shadow-lg rounded-full w-24 h-24 flex items-center justify-center text-white text-sm font-semibold transform animate-float-1 cursor-pointer m-2 md:m-4 lg:m-6"
+      >
+        Swimming
+      </div>
+
+      <!-- Hobby Item 2 -->
+      <div
+        class="hobby-ball bg-gradient-to-r from-[#37D4BF] to-[#3AAAF3] shadow-lg rounded-full w-24 h-24 flex items-center justify-center text-white text-sm font-semibold transform animate-float-2 cursor-pointer m-4 md:m-6 lg:m-8"
+      >
+        Kitesurfing
+      </div>
+
+      <!-- Hobby Item 3 -->
+      <div
+        class="hobby-ball bg-gradient-to-r from-[#7da8cc] to-[#67D4BF] shadow-lg rounded-full w-24 h-24 flex items-center justify-center text-white text-sm font-semibold transform animate-float-3 cursor-pointer m-6 md:m-4 lg:m-2"
+      >
+        Books
+      </div>
+
+      <!-- Hobby Item 4 -->
+      <div
+        class="hobby-ball bg-gradient-to-r from-[#8da8cc] to-[#1AAAF3] shadow-lg rounded-full w-24 h-24 flex items-center justify-center text-white text-sm font-semibold transform animate-float-4 cursor-pointer m-4 md:m-6 lg:m-8"
+      >
+        Bouldering
+      </div>
+
+      <!-- Hobby Item 5 -->
+      <div
+        class="hobby-ball bg-gradient-to-r from-[#3da8cc] to-[#37D4BF] shadow-lg rounded-full w-24 h-24 flex items-center justify-center text-white text-sm font-semibold transform animate-float-5 cursor-pointer m-2 md:m-4 lg:m-6"
+      >
+        Board games
+      </div>
+
+      <!-- Hobby Item 6 -->
+      <div
+        class="hobby-ball bg-gradient-to-r from-[#23A1C8] to-[#75B0EE] shadow-lg rounded-full w-24 h-24 flex items-center justify-center text-white text-sm font-semibold transform animate-float-6 cursor-pointer m-4 md:m-6 lg:m-8"
+      >
+        Dancing
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const balls = document.querySelectorAll(".hobby-ball");
+
+  const getRandomNumber = (num: number) => {
+    return Math.floor(Math.random() * (num + 1));
+  };
+
+  balls.forEach((ball) => {
+    ball.addEventListener("mouseenter", () => {
+      ball.animate(
+        [
+          { transform: "translate(0, 0)" },
+          {
+            transform: `translate(${getRandomNumber(100)}px, ${getRandomNumber(100)}px)`,
+          },
+          { transform: "translate(0, 0)" },
+        ],
+        {
+          duration: 2000,
+          easing: "ease-out",
+        }
+      );
+    });
+  });
+</script>
+
+<style>
+  @keyframes float-1 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float-2 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float-3 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float-4 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float-5 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float-6 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float-1 {
+    animation: float-1 3s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: float-2 4s ease-in-out infinite;
+  }
+
+  .animate-float-3 {
+    animation: float-3 2.5s ease-in-out infinite;
+  }
+
+  .animate-float-4 {
+    animation: float-4 3.5s ease-in-out infinite;
+  }
+
+  .animate-float-5 {
+    animation: float-5 4.5s ease-in-out infinite;
+  }
+
+  .animate-float-6 {
+    animation: float-6 3s ease-in-out infinite;
+  }
+</style>
