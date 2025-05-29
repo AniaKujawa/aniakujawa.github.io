@@ -12,7 +12,7 @@
         href="https://www.linkedin.com/in/annakujawa"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-2 px-6 py-3 bg-teal-400 hover:bg-teal-600 text-white rounded-lg transition-colors"
+        class="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-400 to-teal-600 text-white rounded-lg transition-colors duration-300 hover:animate-gradient"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -49,3 +49,23 @@
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .hover\:animate-gradient {
+    background: linear-gradient(270deg, #64ffda, #4786aa, #64ffda);
+    background-size: 400% 400%;
+    animation: gradient-animation 5s ease infinite;
+  }
+</style>
