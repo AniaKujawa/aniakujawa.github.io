@@ -1,3 +1,7 @@
+---
+import aboutImg from "../assets/about.jpeg";
+---
+
 <section id="about" class="py-20 dark:bg-slate-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -108,7 +112,7 @@
               >Ant Design</span
             >
             <span
-              class="px-4 py-2 bg-blue-500/20 dshadow-md ark:text-blue-300 text-blue-400 rounded-full"
+              class="px-4 py-2 bg-blue-500/20 shadow-md dark:text-blue-300 text-blue-400 rounded-full"
               >Emotion CSS</span
             >
             <span
@@ -125,12 +129,22 @@
       <!-- Image or Additional Content -->
       <div class="relative">
         <div
-          class="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-1"
+          class="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 to-teal-500/20 p-2"
         >
           <div
             class="w-full h-full rounded-2xl bg-slate-800/50 dark:bg-slate-700/50 backdrop-blur-sm flex items-center justify-center"
           >
-            <p class="text-gray-400 text-center p-8">image placeholder</p>
+            <div class="relative">
+              <img
+                src={aboutImg.src}
+                alt="About Image"
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-blue-400 to-teal-400 opacity-20 rounded-2xl"
+              >
+              </div>
+            </div>
           </div>
         </div>
       </div>
