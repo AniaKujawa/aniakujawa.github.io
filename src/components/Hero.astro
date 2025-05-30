@@ -1,13 +1,29 @@
 ---
 import backgroundVideo from "../assets/background.mp4";
+import placeholderImage from "../assets/background.png";
 ---
 
 <section
   class="relative min-h-screen flex items-center justify-center overflow-hidden"
 >
   <!-- Video Background -->
-  <div class="absolute inset-0 w-full h-full">
-    <video class="object-cover w-full h-full" autoplay loop muted playsinline>
+  <div
+    class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400 to-teal-400"
+  >
+    <img
+      src={placeholderImage.src}
+      alt="Journey image"
+      class="object-cover w-full h-full absolute inset-0 z10"
+      id="placeholder-image"
+    />
+    <video
+      class="object-cover w-full h-full"
+      autoplay
+      loop
+      muted
+      playsinline
+      onloadeddata="document.getElementById('placeholder-image').style.display='none';"
+    >
       <source src={backgroundVideo} type="video/mp4" />
     </video>
     <!-- Dark overlay -->
